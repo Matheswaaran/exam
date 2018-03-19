@@ -56,19 +56,16 @@ app.controller('getQuizData',function ($rootScope,$scope, $window ,toaster,$root
 		 		   $http.get("api/getdata/Getquizques.php?tab="+$scope.Quiztabname).success(function (response) {
 			/*After Successfully fetch the data from JSON file assigning these data to $scope object variable*/
 			//$scope.questions = response.records;
+      console.log(response);
 			$scope.setGlobal(response);
-			console.log("response got");
-
+      console.log("response got");
 		});
-
-
-  console.log($scope.user.name+" user got");
-
-$scope.questions=[];
+    console.log($scope.user.name+" user got");
+    $scope.questions=[];
     $scope.setGlobal=function(response){
       $scope.questions=response.records;
       $scope.quesarr=[$scope.questions];
-      }
+    }
   //$scope.questions=[];
   $scope.index=1;
   $scope.pos=$scope.index-1;

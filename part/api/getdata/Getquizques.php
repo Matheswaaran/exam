@@ -13,9 +13,9 @@ echo "error in connection";
    // echo "error in query";
     echo $tab_name;
 	}else{
-		$data=array();
 		if(mysqli_num_rows($result)>0){
 			while ($row=mysqli_fetch_assoc($result)) {
+				$data=array();
 				$quiz_ques=array();
 				$quiz_ques["sno"]=$row["sno"];
 				$quiz_ques["ques"]=$row["ques"];
